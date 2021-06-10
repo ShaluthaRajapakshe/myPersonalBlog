@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Setting up the environment needed to begin with STM32</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css%3Fv=6e2368e12e.css" />
+    <link rel="stylesheet" href="http://localhost:2368/setting-up-the-environment-needed-to-begin-with-stm32/styles.css">
+
+    <link rel="icon" href="../favicon.png" type="image/png" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="Shalutha&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Setting up the environment needed to begin with STM32" />
+    <meta property="og:description" content="This article will cover the basics you will need in order to start programming your STM32 boards" />
+    <meta property="og:url" content="http://localhost:2368/setting-up-the-environment-needed-to-begin-with-stm32/" />
+    <meta property="og:image" content="http://localhost:2368/content/images/2021/06/cover-1.jpg" />
+    <meta property="article:published_time" content="2020-04-07T18:30:00.000Z" />
+    <meta property="article:modified_time" content="2021-06-08T16:43:08.000Z" />
+    <meta property="article:tag" content="MCU Programming" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/shalutha.rajapakshe/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Setting up the environment needed to begin with STM32" />
+    <meta name="twitter:description" content="This article will cover the basics you will need in order to start programming your STM32 boards" />
+    <meta name="twitter:url" content="http://localhost:2368/setting-up-the-environment-needed-to-begin-with-stm32/" />
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2021/06/cover-1.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Shalutha Rajapakshe" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="MCU Programming" />
+    <meta name="twitter:site" content="@ghost" />
+    <meta property="og:image:width" content="650" />
+    <meta property="og:image:height" content="461" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Shalutha&#x27;s Blog",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Shalutha Rajapakshe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2021/03/myimage.png",
+            "width": 320,
+            "height": 320
+        },
+        "url": "http://localhost:2368/author/shalutha/",
+        "sameAs": []
+    },
+    "headline": "Setting up the environment needed to begin with STM32",
+    "url": "http://localhost:2368/setting-up-the-environment-needed-to-begin-with-stm32/",
+    "datePublished": "2020-04-07T18:30:00.000Z",
+    "dateModified": "2021-06-08T16:43:08.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2021/06/cover-1.jpg",
+        "width": 650,
+        "height": 461
+    },
+    "keywords": "MCU Programming",
+    "description": "This article will cover the basics you will need in order to start programming your STM32 boards",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.40" />
+    <link rel="alternate" type="application/rss+xml" title="Shalutha&#x27;s Blog" href="../rss/index.html" />
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet'>
+
+<style>
+    
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  background: #f0ffff;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-evenly;
+  align-items: flex-end;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-container-1 {
+  /* We first create a flex layout context */
+  display: flex;
+  background: #f0ffff;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-evenly;
+  
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  list-style: none;
+}    
+    
+    
+.flex-container-heading {
+  /* We first create a flex layout context */
+  display: flex;
+  background: rgba(255, 255, 237, .85);
+  
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: flex-start;
+  width: 550px;
+  height: 180px;
+   
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}    
+
+
+.flex-item {
+  /*background: red;*/
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 20px;
+  line-height: 150px;
+  color: black;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+  
+    
+.flex-item img{
+  max-width: 100%;
+  object-fit: contain;
+}    
+    
+    
+    
+.flex-item-1 {
+  background: #f0ffff;
+  padding: 5px;
+  width: 200px;
+  height: 20px;
+  margin-top: 0px;
+  line-height: 0px;
+  color: black;
+  font-weight: bold;
+  font-family: 'Amiri';
+  font-size: 1em;
+  text-align: center;
+}
+    
+    
+    
+.flex-heading-name {
+  /*background: red;*/
+  padding: 0px;
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+  line-height: 30px;
+  color: blue;
+  font-weight: bold;
+  font-family: 'Lobster';
+  font-size: 1.2m;
+  text-align: center;
+    
+}
+
+.flex-item-header-image {
+  /*background: red;*/
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  /*margin-top: 20px;*/
+  line-height: 90px;
+  color: black;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+    
+    
+    
+.circular{
+  border-radius: 50%;
+}
+    
+    
+.notbold{
+    font-weight:normal
+}
+
+/* Timeline*/
+    
+
+
+    
+</style>
+
+</head>
+<body class="post-template tag-mcu-programming">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header">
+    <div class="outer site-nav-main">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+                <a class="site-nav-logo" href="../index.html">Shalutha&#x27;s Blog</a>
+            <div class="site-nav-content">
+                    <ul class="nav">
+    <li class="nav-home"><a href="../index.html">Home</a></li>
+    <li class="nav-robotics"><a href="../tag/robotics/index.html">Robotics</a></li>
+    <li class="nav-mcu"><a href="../tag/mcu-programming/index.html">MCU</a></li>
+</ul>
+
+                    <span class="nav-post-title dash">Setting up the environment needed to begin with STM32</span>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+            <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/shalutha.rajapakshe/" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z" /></svg></a>
+                    <a class="social-link social-link-tw" href="https://twitter.com/ghost" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            </div>
+                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://localhost:2368/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+</a>
+
+    </div>
+</nav>
+    </div>
+</div></header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-mcu-programming ">
+
+            <header class="post-full-header">
+
+                <section class="post-full-tags">
+                    <a href="../tag/mcu-programming/index.html">MCU Programming</a>
+                </section>
+
+                <h1 class="post-full-title">Setting up the environment needed to begin with STM32</h1>
+
+                <p class="post-full-custom-excerpt">This article will cover the basics you will need in order to start programming your STM32 boards</p>
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2021/03/myimage.png" alt="Shalutha Rajapakshe" />
+                                    <div class="author-info">
+                                        <h2>Shalutha Rajapakshe</h2>
+                                        <p>Read <a href="../author/shalutha/index.html">more posts</a> by this author.</p>
+                                    </div>
+                                </div>
+
+                                <a href="../author/shalutha/index.html" class="author-avatar">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2021/03/myimage.png" alt="Shalutha Rajapakshe" />
+                                </a>
+
+                            </li>
+                        </ul>
+
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name"><a href="../author/shalutha/index.html">Shalutha Rajapakshe</a></h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2020-04-08">8 Apr 2020</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 5 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            <figure class="post-full-image">
+                <img
+                    srcset="../content/images/size/w300/2021/06/cover-1.jpg 300w,
+                           ../content/images/size/w600/2021/06/cover-1.jpgg 600w,
+                          ../content/images/size/w1000/2021/06/cover-1.jpgpg 1000w,
+                         ../content/images/size/w2000/2021/06/cover-1.jpgjpg 2000w"
+                    sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 1170px,
+                            2000px"
+                    src="../content/images/size/w2000/2021/06/cover-1.jpg"
+                    alt="Setting up the environment needed to begin with STM32"
+                />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <hr><p>Hey guys,</p><p>So how are you guys? Hope you all are doing well.</p><p>From the last article, we told you that we will be looking into the programming side of STM32. But, we thought it would be much better for you guys, if we can give an idea about the hardware you need to do the programming with STM32 first. So today’s article will be about the hardware you needed to program a STM32, and the step by step guide to settle them with your PC.</p><p>So the topics for today are as follows.</p><p>1 - Choosing a STM32 chip/Development Board for learning purposes</p><p>2 - Methods of programming the STM32 chip/Development Board</p><p>3 - Installing STM32CubeIDE</p><h3 id="1-choosing-a-stm32-chip-development-board-for-learning-purposes">1 - Choosing a STM32 chip/Development Board for learning purposes</h3><p>As I mentioned in the previous post, the STM32F1 series and the STMF4 series are the most suitable series for a beginner. For a price of RS 700-1000 range, you can easily buy a STM32F103C8 Development Board in Sri Lanka. F4 series’s Nucleo Boards (having chips like STM32F401, STM32F411, etc) are a little bit high in cost in Sri Lanka. So because of the cost issue, we would recommend a STM32F103C8 board for testing purposes.</p><p>The chip we are using in our micromouse is STM32F405. The F4 series has a greater processing power and many other advantages (higher flash memory,SRAM, etc) than the F1 series, <strong>but it should be mentioned that we can use the STM32F103C8 board to check every sensor, actuator, etc. that we are using in our mouse</strong> . So that you don’t need to wait until you completely build your mouse, you can check every function you are planning to use in your mouse, using the STM32F103C8 board (Bluepill).</p><p>Following shows a STM32F103C8 Development Board (Bluepill) &amp; the chip (STM32F103C8) used in it</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/STM32-2.jpg" class="kg-image" alt><figcaption>STM32F103C8 Development Board</figcaption></figure><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/armchip-1.png" class="kg-image" alt><figcaption>STM32F103C8 Chip</figcaption></figure><p>This one here is a STM32 Nucleo F411RE Development Board</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/NUCLEO-F411RE-3-1.jpg" class="kg-image" alt><figcaption>STM32 Nucleo F411RE Development Board</figcaption></figure><p>This is the STM32F405RGT6 chip (Chip we will be using in our mouse)</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/chip2.jpeg" class="kg-image" alt><figcaption>STM32F405RGT6 Chip&nbsp;</figcaption></figure><p>For this STM32 guide, the requirement of a STM32 development board or a built robot using a STM32 chip is mandatory.</p><h3 id="2-methods-of-programming-the-stm32-chip-development-board">2 - Methods of programming the STM32 chip/Development Board</h3><p>Have you guys ever heard about a STLink or a TTL?</p><p>Normally, there are two main ways of programming a STM32 chip.</p><p>1 - Using a STLink</p><p>2 - Using USB - TTL converter</p><p><strong>STLink</strong></p><p>Mainly there are 3 types of STLinks.</p><p>1 - Standard STLink</p><p>2 - STLink Dongle</p><p>3 - On Board STLink</p><p>This one here is a Standard STlink and is a bit more expensive than a STLink Dongle and also has more debugging functionalities than a STLink Dongle.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/stlink.jpeg" class="kg-image" alt><figcaption>Standard STlink</figcaption></figure><p>This is a STLink Dongle and it is the most popular STLink type because of the lower price (RS 650 - 700) than the other types.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/stlink-normal.jpeg" class="kg-image" alt><figcaption>STLink Dongle</figcaption></figure><p>Onboard STLinks comes along with Nucleo development boards as shown in the following picture and you can also use this STLink to program any other STM32 chip. The advantage of Nucleo boards is, you can use USB - Mini cable to directly program your board.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/stm32-marked.gif" class="kg-image" alt><figcaption>STLink on Nucleo Development Board</figcaption></figure><p>There are 4 pins mainly required to program a STM32 chip using a STLink.</p><p>1 - VCC (Power pin)</p><p>2 - GND (Ground pin)</p><p>3 - SWCLK (Clock)</p><p>4 - SWDIO (Data)</p><p>Additionally there’s an optional pin called SWO. This pin is only available at Standard STLinks and does not come with STLink Dongles. The advantage of this pin is it can be used to trace data.</p><p>Wiring diagram of a STLink dongle with STM32F103C8(Bluepill) Development Board is as follows.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/wire.png" class="kg-image" alt><figcaption>Wiring diagram of a STLink dongle with STM32F103C8</figcaption></figure><p>In our STM32 guide, we will be using STM32CubeIDE to program our mouse and you can use any one of the three STLinks that we have mentioned above to program your STM32 chip using STM32CubeIDE.</p><p><strong>TTL</strong></p><p>Here is an USB - TTL converter programmer.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/TTl.jpeg" class="kg-image" alt><figcaption>USB - TTL converter&nbsp;</figcaption></figure><p>When using this, the communication happens through UART protocol. So you need to connect pins in your TTL programmer with STM32F103C8 Development Board as follows.</p><figure class="kg-card kg-image-card"><img src="../content/images/2021/06/table.png" class="kg-image" alt></figure><p>(* If you’re powering the STM32 board using TTL, this is required. Otherwise it is not needed)</p><p>This picture shows the wiring.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/Real-wiring.jpeg" class="kg-image" alt><figcaption>Wiring Diagram</figcaption></figure><p>But you need to be aware of one thing when using this method. Make sure the boot 0 jumper pin on the board is set to 1 (programming mode) while uploading the boot loader. Once the boot loader is flashed this pin can be changed back to initial position (operating mode).</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2021/06/board-marked.jpeg" class="kg-image" alt><figcaption>Modes in Bluepill</figcaption></figure><p>To use this method to program a STM32 chip using STM32CubeIDE, you need an additional software called STM32 Flash Loader Demonstrator.</p><p>What actually happens is, first you write your code in STM32CubeIDE and get the .bin file or .hex file and then using STM32 Flash Loader, you can upload it to the STM32 chip.</p><p>It should be noted that using this method, you cannot debug your program using CubeIDE.</p><p>You can download STM32 Flash Loader Demonstrator using this link</p><ul><li><a href="https://www.st.com/en/development-tools/flasher-stm32.html">https://www.st.com/en/development-tools/flasher-stm32.html</a></li></ul><h3 id="3-installing-stm32cubeide">3 - Installing STM32CubeIDE</h3><p>Now, you have a STM32 chip/Development Board and a suitable programmer ready with you. Next step is installing the editor required to edit your code. We are using STM32CudeIDE as our editor and it is required that you also have the same if you are following this guide.</p><p>You can download STM32CubeIDE using this link as we mentioned in the previous post</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.st.com/en/development-tools/stm32cubeide.html"><div class="kg-bookmark-content"><div class="kg-bookmark-title">STM32CubeIDE - STMicroelectronics</div><div class="kg-bookmark-description">STM32CubeIDE - Integrated Development Environment for STM32, STM32CubeIDE-RPM, STM32CubeIDE-Lnx, STM32CubeIDE-Win, STM32CubeIDE-DEB, STM32CubeIDE-Mac, STMicroelectronics</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://www.st.com/etc/clientlibs/st-site/media/app/images/favicon-32.png"><span class="kg-bookmark-publisher">STMicroelectronics</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://www.st.com/content/dam/logos/open-graph-logo.png"></div></a></figure><p><strong>If you’re planning to download more products from ST, it will become easier if you have an account. Creating an account is absolutely free.</strong></p><p>So see you guys.</p><p>Cheers!</p>
+                </div>
+            </section>
+
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+                <article class="read-next-card">
+                    <header class="read-next-card-header">
+                        <h3><span>More in</span> <a href="../tag/mcu-programming/index.html">MCU Programming</a></h3>
+                    </header>
+                    <div class="read-next-card-content">
+                        <ul>
+                            <li>
+                                <h4><a href="../introduction-to-stm32/index.html">Introduction to STM32</a></h4>
+                                <div class="read-next-card-meta">
+                                    <p><time datetime="2020-04-03">3 Apr 2020</time> –
+                                        4 min read</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="read-next-card-footer">
+                        <a href="../tag/mcu-programming/index.html">1 post
+                            →</a>
+                    </footer>
+                </article>
+
+                <article class="post-card post tag-robotics ">
+
+    <a class="post-card-image-link" href="../writing-your-own-path-planning-algorithm-in-ros-2/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2021/03/post-image.jpg 300w,
+                   ../content/images/size/w600/2021/03/post-image.jpgg 600w,
+                  ../content/images/size/w1000/2021/03/post-image.jpgpg 1000w,
+                 ../content/images/size/w2000/2021/03/post-image.jpgjpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="../content/images/size/w600/2021/03/post-image.jpg"
+            alt="Writing your own path planning algorithm in ROS"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../writing-your-own-path-planning-algorithm-in-ros-2/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Robotics</div>
+                <h2 class="post-card-title">Writing your own path planning algorithm in ROS</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>In this article I will focus on writing and adding D* Lite algorithm as a path planner plugin in ROS, so that you can try out your customized path planning algorithms and evaluate their performance in ROS simulation environment before going into the real world.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Shalutha Rajapakshe
+                    </div>
+            
+                    <a href="../author/shalutha/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2021/03/myimage.png" alt="Shalutha Rajapakshe" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/shalutha/index.html">Shalutha Rajapakshe</a></span>
+                <span class="post-card-byline-date"><time datetime="2021-03-18">18 Mar 2021</time> <span class="bull">&bull;</span> 6 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+                <article class="post-card post tag-mcu-programming ">
+
+    <a class="post-card-image-link" href="../introduction-to-stm32/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2021/06/covernew.jpeg 300w,
+                   ../content/images/size/w600/2021/06/covernew.jpegg 600w,
+                  ../content/images/size/w1000/2021/06/covernew.jpegeg 1000w,
+                 ../content/images/size/w2000/2021/06/covernew.jpegpeg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="../content/images/size/w600/2021/06/covernew.jpeg"
+            alt="Introduction to STM32"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../introduction-to-stm32/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">MCU Programming</div>
+                <h2 class="post-card-title">Introduction to STM32</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>STM32 micrpcontrollers are one of the most famous microcontrollers around the world. In this article I will give you an introduction to amazing thing.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Shalutha Rajapakshe
+                    </div>
+            
+                    <a href="../author/shalutha/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2021/03/myimage.png" alt="Shalutha Rajapakshe" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/shalutha/index.html">Shalutha Rajapakshe</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-04-03">3 Apr 2020</time> <span class="bull">&bull;</span> 4 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../index.html">Shalutha&#x27;s Blog</a> &copy; 2021</section>
+                <nav class="site-footer-nav">
+                    <a href="../index.html">Latest Posts</a>
+                    <a href="https://www.facebook.com/shalutha.rajapakshe/" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/ghost" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="../assets/built/casper.js%3Fv=6e2368e12e"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+        var success = getParameterByName('success');
+
+        $(document).ready(function () {
+            if (action == 'subscribe' && (success === null || success === 'true')) {
+                $('body').addClass('subscribe-success');
+            }
+
+            if (action == 'subscribe' && success === 'false') {
+                $('body').addClass('subscribe-failure');
+            }
+
+            $('.subscribe-notification .subscribe-close-button').click(function () {
+                $('.subscribe-notification').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function() {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
+
+        // Replace nav with title on scroll - start
+        Casper.stickyNavTitle({
+            navSelector: '.site-nav-main',
+            titleSelector: '.post-full-title',
+            activeClass: 'nav-post-title-active'
+        });
+        // Replace nav with title on scroll - end
+
+        // Hover on avatar
+        var hoverTimeout;
+        $('.author-list-item').hover(function () {
+            var $this = $(this);
+
+            clearTimeout(hoverTimeout);
+
+            $('.author-card').removeClass('hovered');
+            $(this).children('.author-card').addClass('hovered');
+
+        }, function () {
+            var $this = $(this);
+
+            hoverTimeout = setTimeout(function () {
+                $this.children('.author-card').removeClass('hovered');
+            }, 800);
+        });
+    });
+</script>
+
+
+    
+
+</body>
+</html>

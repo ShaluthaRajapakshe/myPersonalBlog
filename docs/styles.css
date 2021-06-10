@@ -1,0 +1,76 @@
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  background: blue;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: center;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-item {
+  background: blue;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: black;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+
+
+/* ul {
+    white-space: nowrap;
+  }
+  
+  ul, li {
+    list-style: none;
+    display: inline;
+  } */
+  
+  /* #testing div {
+    margin-left: 300px;/*or whatever indentation size you want*/
+  /*} */
+
+/* .caption {
+    width: 150px;
+    text-align: center;
+} */
+
+/* div.container {
+    width: 80%;
+    margin: 400px;
+} */
+
+
+/* .yellow-div {
+    background-color:yellow;
+    width: 500px;
+    padding: 25px;
+    border: 5px solid black;
+    margin:100px;
+  } */
+
+/* .margins {
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: lightblue;
+  } */
