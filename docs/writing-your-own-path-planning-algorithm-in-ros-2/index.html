@@ -9,8 +9,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css%3Fv=6e2368e12e.css" />
-    <link rel="stylesheet" href="http://localhost:2368/writing-your-own-path-planning-algorithm-in-ros-2/styles.css">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css%3Fv=e6064b4e10.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/built/institutes.css%3Fv=e6064b4e10.css" />
+    <link rel="stylesheet" href="https://shalutharajapakshe.github.io/writing-your-own-path-planning-algorithm-in-ros-2/styles.css">
 
     <link rel="icon" href="../favicon.png" type="image/png" />
     <link rel="canonical" href="index.html" />
@@ -21,8 +22,8 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Writing your own path planning algorithm in ROS" />
     <meta property="og:description" content="In this article I will focus on writing and adding D* Lite algorithm as a path planner plugin in ROS, so that you can try out your customized path planning algorithms and evaluate their performance in ROS simulation environment before going into the real world." />
-    <meta property="og:url" content="http://localhost:2368/writing-your-own-path-planning-algorithm-in-ros-2/" />
-    <meta property="og:image" content="http://localhost:2368/content/images/2021/03/post-image.jpg" />
+    <meta property="og:url" content="https://shalutharajapakshe.github.io/writing-your-own-path-planning-algorithm-in-ros-2/" />
+    <meta property="og:image" content="https://shalutharajapakshe.github.io/content/images/2021/03/post-image.jpg" />
     <meta property="article:published_time" content="2021-03-18T12:52:00.000Z" />
     <meta property="article:modified_time" content="2021-06-08T16:41:42.000Z" />
     <meta property="article:tag" content="Robotics" />
@@ -31,8 +32,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Writing your own path planning algorithm in ROS" />
     <meta name="twitter:description" content="In this article I will focus on writing and adding D* Lite algorithm as a path planner plugin in ROS, so that you can try out your customized path planning algorithms and evaluate their performance in ROS simulation environment before going into the real world." />
-    <meta name="twitter:url" content="http://localhost:2368/writing-your-own-path-planning-algorithm-in-ros-2/" />
-    <meta name="twitter:image" content="http://localhost:2368/content/images/2021/03/post-image.jpg" />
+    <meta name="twitter:url" content="https://shalutharajapakshe.github.io/writing-your-own-path-planning-algorithm-in-ros-2/" />
+    <meta name="twitter:image" content="https://shalutharajapakshe.github.io/content/images/2021/03/post-image.jpg" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Shalutha Rajapakshe" />
     <meta name="twitter:label2" content="Filed under" />
@@ -48,10 +49,10 @@
     "publisher": {
         "@type": "Organization",
         "name": "Shalutha&#x27;s Blog",
-        "url": "http://localhost:2368/",
+        "url": "https://shalutharajapakshe.github.io/",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://localhost:2368/favicon.png",
+            "url": "https://shalutharajapakshe.github.io/favicon.png",
             "width": 60,
             "height": 60
         }
@@ -61,20 +62,20 @@
         "name": "Shalutha Rajapakshe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://localhost:2368/content/images/2021/03/myimage.png",
+            "url": "https://shalutharajapakshe.github.io/content/images/2021/03/myimage.png",
             "width": 320,
             "height": 320
         },
-        "url": "http://localhost:2368/author/shalutha/",
+        "url": "https://shalutharajapakshe.github.io/author/shalutha/",
         "sameAs": []
     },
     "headline": "Writing your own path planning algorithm in ROS",
-    "url": "http://localhost:2368/writing-your-own-path-planning-algorithm-in-ros-2/",
+    "url": "https://shalutharajapakshe.github.io/writing-your-own-path-planning-algorithm-in-ros-2/",
     "datePublished": "2021-03-18T12:52:00.000Z",
     "dateModified": "2021-06-08T16:41:42.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:2368/content/images/2021/03/post-image.jpg",
+        "url": "https://shalutharajapakshe.github.io/content/images/2021/03/post-image.jpg",
         "width": 800,
         "height": 502
     },
@@ -82,7 +83,7 @@
     "description": "In this article I will focus on writing and adding D* Lite algorithm as a path planner plugin in ROS, so that you can try out your customized path planning algorithms and evaluate their performance in ROS simulation environment before going into the real world.",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:2368/"
+        "@id": "https://shalutharajapakshe.github.io/"
     }
 }
     </script>
@@ -233,7 +234,14 @@
     
     
 .circular{
-  border-radius: 50%;
+  	border-radius: 50%;
+    position: absolute;
+    margin-bottom: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
 }
     
     
@@ -243,6 +251,536 @@
 
 /* Timeline*/
     
+    
+    
+/* Ramith's code */
+
+
+
+.level {
+    align-items: center;
+    justify-content: space-between;
+    overflow:auto; }
+    .level code {
+      border-radius: 4px; }
+    .level img {
+      display: inline-block;
+      vertical-align: top; }
+    .level.is-mobile {
+      display: flex; }
+      .level.is-mobile .level-left,
+      .level.is-mobile .level-right {
+        display: flex; }
+      .level.is-mobile .level-left + .level-right {
+        margin-top: 0; }
+      .level.is-mobile .level-item:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 0.75rem; }
+      .level.is-mobile .level-item:not(.is-narrow) {
+        flex-grow: 1; }
+    @media screen and (min-width: 769px), print {
+      .level {
+        display: flex; }
+        .level > .level-item:not(.is-narrow) {
+          flex-grow: 1; } }
+  
+  .level-item {
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding:0em 1em 0em 1em;
+    justify-content: center; }
+    .level-item .title,
+    .level-item .subtitle {
+      margin-bottom: 0; }
+    @media screen and (max-width: 768px) {
+      .level-item:not(:last-child) {
+        margin-bottom: 0.75rem; } }
+  
+  .level-left,
+  .level-right {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0; }
+    .level-left .level-item.is-flexible,
+    .level-right .level-item.is-flexible {
+      flex-grow: 1; }
+    @media screen and (min-width: 769px), print {
+      .level-left .level-item:not(:last-child),
+      .level-right .level-item:not(:last-child) {
+        margin-right: 0.75rem; } }
+  
+  .level-left {
+    align-items: center;
+    justify-content: flex-start; }
+    @media screen and (max-width: 768px) {
+      .level-left + .level-right {
+        margin-top: 1.5rem; } }
+    @media screen and (min-width: 769px), print {
+      .level-left {
+        display: flex; } }
+  
+  .level-right {
+    align-items: center;
+    justify-content: flex-end; }
+    @media screen and (min-width: 769px), print {
+      .level-right {
+        display: flex; } }
+
+
+
+    
+.image {
+  display: block;
+  position: relative; 
+  margin-left: auto;
+  margin-right: auto;
+}
+  .image img {
+    /* display: block; */
+    /* height: auto; */
+    width: 100%;
+    }
+    .image img.is-rounded {
+      border-radius: 290486px; }
+  .image.is-fullwidth {
+    width: 100%; }
+  .image.is-square img,
+  .image.is-square .has-ratio, .image.is-1by1 img,
+  .image.is-1by1 .has-ratio, .image.is-5by4 img,
+  .image.is-5by4 .has-ratio, .image.is-4by3 img,
+  .image.is-4by3 .has-ratio, .image.is-3by2 img,
+  .image.is-3by2 .has-ratio, .image.is-5by3 img,
+  .image.is-5by3 .has-ratio, .image.is-16by9 img,
+  .image.is-16by9 .has-ratio, .image.is-2by1 img,
+  .image.is-2by1 .has-ratio, .image.is-3by1 img,
+  .image.is-3by1 .has-ratio, .image.is-4by5 img,
+  .image.is-4by5 .has-ratio, .image.is-3by4 img,
+  .image.is-3by4 .has-ratio, .image.is-2by3 img,
+  .image.is-2by3 .has-ratio, .image.is-3by5 img,
+  .image.is-3by5 .has-ratio, .image.is-9by16 img,
+  .image.is-9by16 .has-ratio, .image.is-1by2 img,
+  .image.is-1by2 .has-ratio, .image.is-1by3 img,
+  .image.is-1by3 .has-ratio {
+    height: 100%;
+    width: 100%; }
+  .image.is-square, .image.is-1by1 {
+    padding-top: 100%; }
+  .image.is-5by4 {
+    padding-top: 80%; }
+  .image.is-4by3 {
+    padding-top: 75%; }
+  .image.is-3by2 {
+    padding-top: 66.6666%; }
+  .image.is-5by3 {
+    padding-top: 60%; }
+  .image.is-16by9 {
+    padding-top: 56.25%; }
+  .image.is-2by1 {
+    padding-top: 50%; }
+  .image.is-3by1 {
+    padding-top: 33.3333%; }
+  .image.is-4by5 {
+    padding-top: 125%; }
+  .image.is-3by4 {
+    padding-top: 133.3333%; }
+  .image.is-2by3 {
+    padding-top: 150%; }
+  .image.is-3by5 {
+    padding-top: 166.6666%; }
+  .image.is-9by16 {
+    padding-top: 177.7777%; }
+  .image.is-1by2 {
+    padding-top: 200%; }
+  .image.is-1by3 {
+    padding-top: 300%; }
+  .image.is-16x16 {
+    height: 16px;
+    width: 16px; }
+  .image.is-24x24 {
+    height: 24px;
+    width: 24px; }
+  .image.is-32x32 {
+    height: 32px;
+    width: 32px; }
+  .image.is-48x48 {
+    height: 48px;
+    width: 48px; }
+  .image.is-64x64 {
+    height: 64px;
+    width: 64px; }
+  .image.is-72x72 {
+      height: 72px;
+      width: 72px; }
+
+  .image.is-88x88 {
+    height: 88px;
+    width: 88px; }
+  .image.is-96x96 {
+    height: 96px;
+    width: 96px; }
+  .image.is-128x128 {
+    height: 128px;
+    width: 128px; }
+
+    .heading {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      }
+
+      .has-text-centered {
+          text-align: center !important; }
+
+  .pb-2 {
+      padding-bottom: 0rem !important; 
+      text-shadow: 0px 0px 20px hsl(0deg 0% 40%/30%);}
+
+    
+
+
+.col-1 {
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+
+.col-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.col-5 {
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-7 {
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+}
+
+.col-8 {
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.col-10 {
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
+
+.col-11 {
+  flex: 0 0 91.666667%;
+  max-width: 91.666667%;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 576px) {
+  .col-sm-1 {
+      flex: 0 0 8.333333%;
+      max-width: 8.333333%;
+  }
+
+  .col-sm-2 {
+      flex: 0 0 16.666667%;
+      max-width: 16.666667%;
+  }
+
+  .col-sm-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+  }
+
+  .col-sm-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+
+  .col-sm-5 {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+  }
+
+  .col-sm-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+
+  .col-sm-7 {
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+  }
+
+  .col-sm-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+  }
+
+  .col-sm-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+  }
+
+  .col-sm-10 {
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%;
+  }
+
+  .col-sm-11 {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+  }
+
+  .col-sm-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-1 {
+      flex: 0 0 8.333333%;
+      max-width: 8.333333%;
+  }
+
+  .col-md-2 {
+      flex: 0 0 16.666667%;
+      max-width: 16.666667%;
+  }
+
+  .col-md-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+  }
+
+  .col-md-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+
+  .col-md-5 {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+  }
+
+  .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+
+  .col-md-7 {
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+  }
+
+  .col-md-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+  }
+
+  .col-md-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+  }
+
+  .col-md-10 {
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%;
+  }
+
+  .col-md-11 {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+  }
+
+  .col-md-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-1 {
+      flex: 0 0 8.333333%;
+      max-width: 8.333333%;
+  }
+
+  .col-lg-2 {
+      flex: 0 0 16.666667%;
+      max-width: 16.666667%;
+  }
+
+  .col-lg-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+  }
+
+  .col-lg-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+
+  .col-lg-5 {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+  }
+
+  .col-lg-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+
+  .col-lg-7 {
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+  }
+
+  .col-lg-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+  }
+
+  .col-lg-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+  }
+
+  .col-lg-10 {
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%;
+  }
+
+  .col-lg-11 {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+  }
+
+  .col-lg-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-xl-1 {
+      flex: 0 0 8.333333%;
+      max-width: 8.333333%;
+  }
+
+  .col-xl-2 {
+      flex: 0 0 16.666667%;
+      max-width: 16.666667%;
+  }
+
+  .col-xl-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+  }
+
+  .col-xl-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+
+  .col-xl-5 {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+  }
+
+  .col-xl-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+
+  .col-xl-7 {
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+  }
+
+  .col-xl-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+  }
+
+  .col-xl-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+  }
+
+  .col-xl-10 {
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%;
+  }
+
+  .col-xl-11 {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+  }
+
+  .col-xl-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .hidden-xs {
+      display: none !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .hidden-sm {
+      display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-md {
+      display: none !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-lg {
+      display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hidden-xl {
+      display: none !important;
+  }
+}
+
 
 
     
@@ -275,11 +813,11 @@
     </div>
     <div class="site-nav-right">
             <div class="social-links">
-                    <a class="social-link social-link-fb" href="https://www.facebook.com/shalutha.rajapakshe/" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z" /></svg></a>
-                    <a class="social-link social-link-tw" href="https://twitter.com/ghost" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/shalutha.rajapakshe/" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" xmlns="https://www.w3.org/2000/svg"><path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z" /></svg></a>
+                    <a class="social-link social-link-tw" href="https://twitter.com/ghost" title="Twitter" target="_blank" rel="noopener"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 </a>
             </div>
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://localhost:2368/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+                <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://shalutharajapakshe.github.io/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
 </a>
 
     </div>
@@ -355,7 +893,7 @@
 
             <section class="post-full-content">
                 <div class="post-content">
-                    <p>Path planning is an important and a significant area in the robotics field. Mobile robots are capable of finding an optimal or a near optimal path from the starting location to a destination based on metrics such as shortest way, quickest way, easiest way, etc. while avoiding collision with obstacles in the operating environment.</p><p>According to the level of information known about the operating environment, path planning can be mainly divided into two types.</p><p>1. <strong>Path planning based on global map information</strong></p><blockquote>This is called global path planning and the information about the operating environment should be completely known for this. In other words, a map should be needed for global path planning.</blockquote><p>2.<strong> Path planning based on local map information</strong></p><blockquote>This is called local path planning. Local path planning focuses on the information observed through the sensors of the robot to find a path from starting location to destination while avoiding obstacles.</blockquote><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cdn-images-1.medium.com/max/800/1*HgHYCLD1KvaC06oSITRrJQ.jpeg" class="kg-image" alt><figcaption>Global plan given by global planner &amp; local plan given by local&nbsp;planner</figcaption></figure><p>What usually happens is first we give our robot a map that we previously built. Map building is a broad field and I will skip that part here. Usually <strong>Simultaneous Localization and Mapping(SLAM)</strong> is used for map building and there are several SLAM methods like <strong>gmapping</strong>, <strong>Hector slam</strong>, <strong>wild-cat slam</strong>, etc. can be used for that purpose.</p><p>So when we have our map, the global path planning algorithm will use that map to generate paths from point to point on that map. It doesn’t care about the sensor information or doesn’t know about new obstacles appearing within the map after the map creation instance, it only uses the static map given for it to calculate the paths. So we cannot only use the global path planning for navigation if our environment is dynamic which is more often the common thing in real world applications.</p><p>This is where local path planning comes into play. Now the robot has a map and a path to follow to its destination. While following the path given from the global path planner, the local path planner will collect information from its sensors and recalculate paths, avoiding any newly appeared or dynamic obstacles within its sensor range. Or in other words the local planner creates his own small map according to the sensor information and uses it for navigation.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cdn-images-1.medium.com/max/800/1*xo6QCKPBn0fmmuwWSDt3EA.jpeg" class="kg-image" alt><figcaption>Static map given to the global planner &amp; Local map created by sensor information</figcaption></figure><p>So in this way the global path planning and local path planning achieves navigation.</p><hr><p><strong>Robot Operating System(ROS)</strong> is an open source framework for writing software related to robots. It includes a collection of tools, libraries and conventions which targets to simplify the creation of complex robot applications across a wide variety of robotic platforms. The amount of robots that use ROS in the scientific community and industry are growing very fast. The built-in ROS simulator <strong>Gazebo</strong> is a widely used simulator in all over the world. It also comes with a physical engine for gravity, inertia, illumination etc. for a real world experience. Even NASA uses this simulator to simulate their robots used for planetary exploration. In this article I will focus on writing and adding D* Lite algorithm as a path planner plugin in ROS, so that you can try out your customized path planning algorithms and evaluate their performance in ROS simulation environment before going into the real world.</p><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*U2HhTNFTipyZESd-NeU7LA.jpeg" class="kg-image" alt></figure><p>I followed this excellent <a href="http://wiki.ros.org/navigation/Tutorials/Writing%20A%20Global%20Path%20Planner%20As%20Plugin%20in%20ROS" rel="noopener"><strong>tutorial </strong></a>written by Dr. Anis Kouba in ROS wiki regarding the integration of a <strong>global path planner plugin</strong> in ROS. So the steps are as below for ROS Noetic version.</p><hr><p>First of all, lets create a new ROS package with required dependencies. The global path planner we are writing must adhere to <strong>nav_core::BaseGlobalPlanner</strong> which is a C++ interface in <strong>nav_core</strong> package that includes key interfaces for the navigation stack. So our package must depend on nav_core. Other than that our package must depend on <strong>roscpp</strong>; which provides a library to interface ROS with C++,<strong> rospy</strong>; which provides a library to interface ROS with python and <strong>std_msgs</strong>; which includes standard ROS messages used in ROS communication. Don’t worry if you forgot to include any of these dependent packages at the beginning, you can always add necessary dependencies later onwards because sometimes we cannot exactly say these are the only packages we require for our work. But for today, we will include the necessary dependencies at the package creating instance. So open a new terminal, go to your workspace’s “<strong>src”</strong> folder and write the following command in the terminal to create your new path planner package. Since I’m creating a D*lite planner I will name my package as dstar_lite_planner</p><blockquote><strong><em>catkin_create_pkg dstar_lite_planner nav_core roscpp rospy std_msgs</em></strong></blockquote><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*dAaUpsXC0Q2YZdyRSnAjPg.jpeg" class="kg-image" alt></figure><p>Now your package has been created. Now it’s time to write the path planner class which is needed for our planner. Go to the “<strong>src</strong>” folder inside your package and create a new header file and a source file. You can give any name you want.</p><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*pu1zPkTXL7Sm_hD-dMNkHA.gif" class="kg-image" alt></figure><p>I have provided two template files added with some comments that uses D* lite algorithm for global path planning. You can use those files to write your own path planner algorithm. You just have to fill the necessary functions in order to make it work. A proper explanation about the content of these files can be found from Dr. Anis Kouba’s tutorial I mentioned earlier. and finally the output path should be given as a vector.</p><p>You can find the template files from my <a href="https://github.com/ShaluthaRajapakshe/dstar_lite_planner.git" rel="noopener"><strong>Github</strong></a> repo.</p><p>Now we have completed writing our global path planner class. So we should compile it now. For that, add the following line to your newly created package’s <strong>CMakeLists.txt </strong>file.</p><!--kg-card-begin: html--><script src="https://gist.github.com/ShaluthaRajapakshe/e394818c25b285ddfcd573b00d40b3d7.js"></script>
+                    <p>Path planning is an important and a significant area in the robotics field. Mobile robots are capable of finding an optimal or a near optimal path from the starting location to a destination based on metrics such as shortest way, quickest way, easiest way, etc. while avoiding collision with obstacles in the operating environment.</p><p>According to the level of information known about the operating environment, path planning can be mainly divided into two types.</p><p>1. <strong>Path planning based on global map information</strong></p><blockquote>This is called global path planning and the information about the operating environment should be completely known for this. In other words, a map should be needed for global path planning.</blockquote><p>2.<strong> Path planning based on local map information</strong></p><blockquote>This is called local path planning. Local path planning focuses on the information observed through the sensors of the robot to find a path from starting location to destination while avoiding obstacles.</blockquote><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cdn-images-1.medium.com/max/800/1*HgHYCLD1KvaC06oSITRrJQ.jpeg" class="kg-image" alt><figcaption>Global plan given by global planner &amp; local plan given by local&nbsp;planner</figcaption></figure><p>What usually happens is first we give our robot a map that we previously built. Map building is a broad field and I will skip that part here. Usually <strong>Simultaneous Localization and Mapping(SLAM)</strong> is used for map building and there are several SLAM methods like <strong>gmapping</strong>, <strong>Hector slam</strong>, <strong>wild-cat slam</strong>, etc. can be used for that purpose.</p><p>So when we have our map, the global path planning algorithm will use that map to generate paths from point to point on that map. It doesn’t care about the sensor information or doesn’t know about new obstacles appearing within the map after the map creation instance, it only uses the static map given for it to calculate the paths. So we cannot only use the global path planning for navigation if our environment is dynamic which is more often the common thing in real world applications.</p><p>This is where local path planning comes into play. Now the robot has a map and a path to follow to its destination. While following the path given from the global path planner, the local path planner will collect information from its sensors and recalculate paths, avoiding any newly appeared or dynamic obstacles within its sensor range. Or in other words the local planner creates his own small map according to the sensor information and uses it for navigation.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cdn-images-1.medium.com/max/800/1*xo6QCKPBn0fmmuwWSDt3EA.jpeg" class="kg-image" alt><figcaption>Static map given to the global planner &amp; Local map created by sensor information</figcaption></figure><p>So in this way the global path planning and local path planning achieves navigation.</p><hr><p><strong>Robot Operating System(ROS)</strong> is an open source framework for writing software related to robots. It includes a collection of tools, libraries and conventions which targets to simplify the creation of complex robot applications across a wide variety of robotic platforms. The amount of robots that use ROS in the scientific community and industry are growing very fast. The built-in ROS simulator <strong>Gazebo</strong> is a widely used simulator in all over the world. It also comes with a physical engine for gravity, inertia, illumination etc. for a real world experience. Even NASA uses this simulator to simulate their robots used for planetary exploration. In this article I will focus on writing and adding D* Lite algorithm as a path planner plugin in ROS, so that you can try out your customized path planning algorithms and evaluate their performance in ROS simulation environment before going into the real world.</p><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*U2HhTNFTipyZESd-NeU7LA.jpeg" class="kg-image" alt></figure><p>I followed this excellent <a href="https://wiki.ros.org/navigation/Tutorials/Writing%20A%20Global%20Path%20Planner%20As%20Plugin%20in%20ROS" rel="noopener"><strong>tutorial </strong></a>written by Dr. Anis Kouba in ROS wiki regarding the integration of a <strong>global path planner plugin</strong> in ROS. So the steps are as below for ROS Noetic version.</p><hr><p>First of all, lets create a new ROS package with required dependencies. The global path planner we are writing must adhere to <strong>nav_core::BaseGlobalPlanner</strong> which is a C++ interface in <strong>nav_core</strong> package that includes key interfaces for the navigation stack. So our package must depend on nav_core. Other than that our package must depend on <strong>roscpp</strong>; which provides a library to interface ROS with C++,<strong> rospy</strong>; which provides a library to interface ROS with python and <strong>std_msgs</strong>; which includes standard ROS messages used in ROS communication. Don’t worry if you forgot to include any of these dependent packages at the beginning, you can always add necessary dependencies later onwards because sometimes we cannot exactly say these are the only packages we require for our work. But for today, we will include the necessary dependencies at the package creating instance. So open a new terminal, go to your workspace’s “<strong>src”</strong> folder and write the following command in the terminal to create your new path planner package. Since I’m creating a D*lite planner I will name my package as dstar_lite_planner</p><blockquote><strong><em>catkin_create_pkg dstar_lite_planner nav_core roscpp rospy std_msgs</em></strong></blockquote><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*dAaUpsXC0Q2YZdyRSnAjPg.jpeg" class="kg-image" alt></figure><p>Now your package has been created. Now it’s time to write the path planner class which is needed for our planner. Go to the “<strong>src</strong>” folder inside your package and create a new header file and a source file. You can give any name you want.</p><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*pu1zPkTXL7Sm_hD-dMNkHA.gif" class="kg-image" alt></figure><p>I have provided two template files added with some comments that uses D* lite algorithm for global path planning. You can use those files to write your own path planner algorithm. You just have to fill the necessary functions in order to make it work. A proper explanation about the content of these files can be found from Dr. Anis Kouba’s tutorial I mentioned earlier. and finally the output path should be given as a vector.</p><p>You can find the template files from my <a href="https://github.com/ShaluthaRajapakshe/dstar_lite_planner.git" rel="noopener"><strong>Github</strong></a> repo.</p><p>Now we have completed writing our global path planner class. So we should compile it now. For that, add the following line to your newly created package’s <strong>CMakeLists.txt </strong>file.</p><!--kg-card-begin: html--><script src="https://gist.github.com/ShaluthaRajapakshe/e394818c25b285ddfcd573b00d40b3d7.js"></script>
 <!--kg-card-end: html--><p>Then in terminal go to catkin_ws directory and run catkin_make. Now you can see your library file created at the directory: <strong>/catkin_ws/devel/lib </strong>with the name<strong> libd_star_planner.so</strong></p><p>Now it is time to deploy our path planner as a plugin in ROS. For that first we should create the plugin description file, inside the package we created.</p><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*c1941w9Jpf6XqgZ9pN_5IA.gif" class="kg-image" alt></figure><p>Then the information about your plugin should be added to that file. Add the following information according to your planner’s details inside the plugin description file.</p><!--kg-card-begin: html--><script src="https://gist.github.com/ShaluthaRajapakshe/558de617f360067fb69ce523d2f8044e.js"></script><!--kg-card-end: html--><p>Rename the <strong>path</strong> with your created library file’s name inside the lib folder. Then change the <strong>name</strong> and<strong> type</strong> according to your path planner class and finally add a description describing your path planner plugin.</p><p>Now to finish the deploying process, we should register our path planner plugin created above. For that we should add the following code with the plugin description file’s name we created, into the package.xml file of our package.</p><!--kg-card-begin: html--><script src="https://gist.github.com/ShaluthaRajapakshe/f4d5e8cea2304c85e6fe736e69725c27.js"></script><!--kg-card-end: html--><p>Congratulations!. Now you have successfully deployed your path planner plugin in the ROS environment. For verification, type this command in your terminal and see whether your plugin is shown.</p><blockquote><strong>rospack plugins — attrib=plugin nav_core</strong></blockquote><p>Now you can add this plugin to any of your robot’s navigation stack and use it for navigation purposes. What you have to do is add the planner as shown in the following image as one your move_base package’s parameters.</p><figure class="kg-card kg-image-card"><img src="https://cdn-images-1.medium.com/max/800/1*afSjmAClyHfhWlXiyj1cJQ.jpeg" class="kg-image" alt></figure><p>In a future article I will explain the steps to add this plugin on Turtlebot3 - Waffle which is a famous robot among the ROS community.</p>
                 </div>
             </section>
@@ -451,7 +989,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-    <script src="../assets/built/casper.js%3Fv=6e2368e12e"></script>
+    <script src="../assets/built/casper.js%3Fv=e6064b4e10"></script>
 
     <script>
         // Parse the URL parameter
